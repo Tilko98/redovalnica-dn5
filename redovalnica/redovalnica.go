@@ -1,13 +1,16 @@
+// Package redovalnica omogoča delo z ocenami študentov in izpis redovalnice.
 package redovalnica
 
 import "fmt"
 
+// Student predstavlja študenta z imenom, priimkom in seznamom ocen
 type Student struct {
 Ime     string
 Priimek string
 Ocene   []int
 }
 
+// DodajOceno doda oceno študentu, če je v dovoljenem območju
 func DodajOceno(studenti map[string]Student, vpisnaStevilka string, ocena int, minOcena int, maxOcena int) {
     // Preveri, ali je ocena v ustreznem območju
     if ocena < minOcena || ocena > maxOcena {
@@ -52,6 +55,7 @@ func povprecje(studenti map[string]Student, vpisnaStevilka string, stOcen int) f
 
 }
 
+// IzpisVsehOcen izpiše vse študente in njihove ocene.
 func IzpisVsehOcen(studenti map[string]Student) {
     fmt.Println("Redovalnica:")
     for vpisnaStevilka, s := range studenti{
@@ -59,6 +63,7 @@ func IzpisVsehOcen(studenti map[string]Student) {
     }
 }
 
+// IzpisiKoncniUspeh izpiše končni uspeh študentov glede na povprečje.
 func IzpisiKoncniUspeh(studenti map[string]Student, stOcen int) {
     for vpisnaStevilka, s := range studenti {
         avg := povprecje(studenti, vpisnaStevilka, stOcen)
