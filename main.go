@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"os"
 
@@ -50,7 +49,7 @@ func main() {
 			redovalnica.IzpisVsehOcen(studenti)
 			redovalnica.IzpisiKoncniUspeh(studenti, stOcen)
 
-			fmt.Println("CLI se je uspešno izvedel.")
+			//fmt.Println("CLI se je uspešno izvedel.")
 			return nil
 		},
 	}
